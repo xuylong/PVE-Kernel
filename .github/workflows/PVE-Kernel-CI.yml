@@ -5,7 +5,7 @@ name: PVE-Kernel-CI
 
 # 触发条件
 on:
-   # push:
+    push:
     branches:
      - master
   schedule:
