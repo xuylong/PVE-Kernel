@@ -5,9 +5,9 @@ name: PVE-Kernel-CI
 
 # 触发条件
 on:
-  # push:
-  #  branches:
-  #   - master
+   push:
+    branches:
+     - master
   schedule:
      - cron: 0 0 * * 3
   # release:
