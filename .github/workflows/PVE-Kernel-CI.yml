@@ -97,9 +97,11 @@ jobs:
           git checkout Kernel-Package
           mkdir -p PVE
           mv -f pve-kernel/*.deb PVE
+          ls ./PVE/pve-kernel*.deb | xargs -d _ | awk '{print $2}'| xargs echo>tmp.txt
+          export FNAME="$(cat tmp.txt)"
           ls -l ./PVE
           cd PVE
-          zip -r PVE_Kernel.zip *    
+          zip -r PVE_Kernel_$FNAME.zip *    
 
       # 上传文件
       - name: Upload File
