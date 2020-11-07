@@ -107,16 +107,3 @@ jobs:
         with:
           name: PVE_Kernel_$FNAME_yfdoor
           path: PVE
-
-      # 更新项目
-      - name: Upload Branch
-        env:
-          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
-        run: |
-          sudo rm -rf pve-kernel tmp.txt .git*
-          git init
-          git config user.name "yfdoor"
-          git config user.email "yfdoor@github.com"          
-          git add .
-          git commit -m "Update PVE-Kernel Package"
-          git push --force --quiet https://$GITHUB_TOKEN@github.com/yfdoor/PVE-Kernel.git HEAD:Kernel-Package
